@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace задание__3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            byte degrees = 15; // градусов на улице
-            sbyte cat = 1; // есть одна кошка
-            short number = 20; // число месяца
-            ushort age = 22; // мой возраст
-            int monday = 1;// первый день недели
-            float pi1 = 3,1415926;// число пи до 7 знака после запятой
-            double pi2 = 3,141592653589793; // число пи до 15 знака после запятой
-            char sign = '!';// восклицательный знак 
-            string weather = "холодно"; // погода на улице
-            bool grownUp = age >= 18; //если твой возраст от 18 лет и страше то ты совершеннолетний 
+            Console.Write("Введите ваше имя "); 
+            string name  = Console.ReadLine (); 
+            Console.Write("Сколько вам лет? "); 
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Где вы живете? "); 
+            string city = Console.ReadLine ();
+            Console.Write("На кого учитесь? "); 
+            string profession = Console.ReadLine ();
+            Console.WriteLine("Вас зовут " + name + " вам " + age + " года, живете в городе " + city + " и учитесь на " + profession + ".");
         }
     }
 }
