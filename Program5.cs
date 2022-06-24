@@ -14,7 +14,7 @@ namespace ConsoleApp4
             Console.Write("Сколько человек в очереди? ");
             int peopleInLine = Convert.ToInt32(Console.ReadLine());
             int waitingHours = timeForOnePerson * peopleInLine / 60;
-            int minutesOfWaiting = timeForOnePerson * peopleInLine - 60 * (timeForOnePerson * peopleInLine / 60);
+            int minutesOfWaiting = timeForOnePerson * peopleInLine - 60 * waitingHours;
             Console.WriteLine("Время ожидания в очереди - " + waitingHours + " часов " + minutesOfWaiting + " минут");
         }
     }
