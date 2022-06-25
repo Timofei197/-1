@@ -4,22 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace Очередь
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите пароль: ");
-            string userInput = Console.ReadLine();
-            string password = "exit";
-
-            while (password != userInput)
-            {
-                Console.Write("Пароль не верный. Введите пароль: ");
-                userInput = Console.ReadLine();
-            }
-            Console.WriteLine("Доступ разрешен");
+            int timeForOnePerson = 10;
+            int hour = 60;
+            Console.Write("Сколько человек в очереди? ");
+            int peopleInLine = Convert.ToInt32(Console.ReadLine());
+            int waitingHours = timeForOnePerson * peopleInLine / hour;
+            int minutesOfWaiting = timeForOnePerson * peopleInLine - hour * waitingHours;
+            Console.WriteLine("Время ожидания в очереди - " + waitingHours + " часов " + minutesOfWaiting + " минут");
         }
     }
 }
