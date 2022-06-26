@@ -12,9 +12,9 @@ namespace последовательность
         {
             int upperLimit = 96;
             int lowerLimit = 5;
-            int syllable = 7;
+            int valueIteration = 7;
 
-            for (int i = lowerLimit; i <= upperLimit; i += syllable)
+            for (int i = lowerLimit; i <= upperLimit; i += valueIteration)
             {
                 Console.WriteLine(i);
             }
