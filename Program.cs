@@ -10,7 +10,9 @@ namespace последовательность
     {
         static void Main(string[] args)
         {
-            for (int i = 5; i <=100; i = i + 7)
+            int upperLimit = 96;
+            int lowerLimit = 5;
+            for (int i = lowerLimit; i <= upperLimit; i += 7)
             {
                 Console.WriteLine(i);
             }
