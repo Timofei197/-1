@@ -11,11 +11,12 @@ namespace Очередь
         static void Main(string[] args)
         {
             int timeForOnePerson = 10;
-            int hour = 60;
+            int minutesPerHour = 60;
             Console.Write("Сколько человек в очереди? ");
             int peopleInLine = Convert.ToInt32(Console.ReadLine());
-            int waitingHours = timeForOnePerson * peopleInLine / hour;
-            int minutesOfWaiting = timeForOnePerson * peopleInLine % hour;
+            int allTheTime = timeForOnePerson * peopleInLine;
+            int waitingHours = allTheTime / minutesPerHour;
+            int minutesOfWaiting = allTheTime % minutesPerHour;
             Console.WriteLine("Время ожидания в очереди - " + waitingHours + " часов " + minutesOfWaiting + " минут");
         }
     }
