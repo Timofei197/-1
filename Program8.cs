@@ -25,12 +25,6 @@ namespace рандом
                 {
                     result += i;
                     Console.WriteLine(i);
-
-                    if (i % lowerLimit == 0 && i % divider == 0)
-                    {
-                        result += i;
-                        Console.WriteLine(i);
-                    }
                 }
             }
             Console.WriteLine(result);
