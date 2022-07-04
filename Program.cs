@@ -10,14 +10,16 @@ namespace конвертер_валют
     {
         static void Main(string[] args)
         {
-            double balanceRUB = 1000;
-            double balanceUSD = 1000;
-            double balanceEUR = 1000;
-            double courseRUBUSD = 0,01859;
-            double courseRUBEUR = 0,01774;
-            double courseUSDRUB = 53,77;
-            double courseEURRUB = 56,36;
-            Console.WriteLine("У вас на балансе " + balanceRUB + " рублей " + balanceUSD + " долларов " + balanceEUR + " евро ");
+            double balanceRub = 1000;
+            double balanceUsd = 1000;
+            double balanceEur = 1000;
+            double RubUsd = 0.01859;
+            double RubEur = 0.01774;
+            double UsdEur = 0.95822;
+            double EurUsd = 1.04;
+            double UsdRub = 53.77;
+            double EurRub = 56.36;
+            Console.WriteLine("У вас на балансе " + balanceRub + " рублей " + balanceUsd + " долларов " + balanceEur + " евро ");
             Console.Write("Какую валюту вы хотите купить? ");
             string buyCurrency = Console.ReadLine();
             Console.Write("Какой валютой хотите оплатить? ");
@@ -32,12 +34,12 @@ namespace конвертер_валют
                     switch (saleCurrency)
                     {
                         case "Доллары":
-                            balanceRUB = quantityСurrencies + balanceRUB;
-                            balanceUSD = balanceUSD - quantityСurrencies * courseRUBUSD;
+                            balanceRub = quantityСurrencies + balanceRub;
+                            balanceUsd = balanceUsd - quantityСurrencies * RubUsd;
                             break;
                         case "Евро":
-                            balanceRUB = quantityСurrencies + balanceRUB;
-                            balanceEUR = balanceEUR - quantityСurrencies * courseEURRUB;
+                            balanceRub = quantityСurrencies + balanceRub;
+                            balanceEur = balanceEur - quantityСurrencies * RubEur;
                             break;
                     }
                     break;
@@ -46,30 +48,31 @@ namespace конвертер_валют
                     switch (saleCurrency)
                     {
                         case "Рубли":
-                            balanceUSD = quantityСurrencies + balanceUSD;
-                            balanceRUB = balanceRUB - quantityСurrencies * courseUSDRUB;
+                            balanceUsd = quantityСurrencies + balanceUsd;
+                            balanceRub = balanceRub - quantityСurrencies * UsdRub;
                             break;
                         case "Евро":
-                            balanceUSD = quantityСurrencies + balanceUSD;
-                            balanceEUR = balanceEUR - quantityСurrencies * courseUSDRUB;
+                            balanceUsd = quantityСurrencies + balanceUsd;
+                            balanceEur = balanceEur - quantityСurrencies * UsdEur;
                             break;
                     }
                     break;
                 case "Евро":
+
                     switch (saleCurrency)
                     {
                         case "Рубли":
-                            balanceEUR = quantityСurrencies + balanceEUR;
-                            balanceRUB = balanceEUR - quantityСurrencies * courseEURRUB;
+                            balanceEur = quantityСurrencies + balanceEur;
+                            balanceRub = balanceEur - quantityСurrencies * EurRub;
                             break;
                         case "Доллары":
-                            balanceEUR = quantityСurrencies + balanceEUR;
-                            balanceUSD = balanceUSD - quantityСurrencies * courseEURUSD;
+                            balanceEur = quantityСurrencies + balanceEur;
+                            balanceUsd = balanceUsd - quantityСurrencies * EurUsd;
                             break;
                     }
                     break;
             }
-            Console.WriteLine("У вас на балансе " + balanceRUB + " рублей " + balanceUSD + " долларов " + balanceEUR + " евро ");
+            Console.WriteLine("У вас на балансе " + balanceRub + " рублей " + balanceUsd + " долларов " + balanceEur + " евро ");
         }
     }
 }
